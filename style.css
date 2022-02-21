@@ -1,0 +1,69 @@
+:root {
+    --button-color: #e0e0eb;
+    --button-border-color: #a2a2c3;
+    --del-color: red;
+    --del-border-color: firebrick;
+}
+
+body{
+    background-color: rgb(216, 216, 216);
+}
+
+.listHolder {
+    border: 2px solid gray;
+    background-color: white;
+    border-radius: 25px;
+    padding: 40px 40px;
+    display: block;
+    width: 500px;
+}
+
+.taskEntry {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    padding: 0px 0px 20px;
+    margin-bottom: 15px;
+}
+
+.inputBox{
+    width: 300px;
+}
+
+.itemView {
+    position: relative;
+    display: block;
+    min-height: 100px;
+}
+
+.taskItem {
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    border: 1px outset var(--button-border-color);
+    background-color: var(--button-color);
+    margin: 7px 5px;
+    padding: 10px 10px;
+}
+
+.itemName {
+    margin-left: 20px;
+    width: 80%;
+    overflow-wrap: break-word;
+}
+
+.deleteButton {
+    position: absolute;
+    right: 20px;
+    align-self: center;
+    color: white;
+    background-color: var(--del-color);
+    height: 30px;
+    width: 30px;
+    border: 1.5px solid var(--del-border-color);
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
