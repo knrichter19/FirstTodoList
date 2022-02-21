@@ -7,6 +7,8 @@
 
 body{
     background-color: rgb(216, 216, 216);
+    display: flex;
+    justify-content: center;
 }
 
 .listHolder {
