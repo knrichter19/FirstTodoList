@@ -13,7 +13,7 @@ function addItem(taskText){
     itemName.classList.add("itemName");
 
     const delButton = document.createElement("button");
-    delButton.innerText = "X";
+    delButton.innerText = "✖";
     delButton.classList.add("deleteButton")
     delButton.addEventListener("click", function(){
         item.remove();
