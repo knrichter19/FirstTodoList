@@ -1,9 +1,12 @@
-function addItem(){
-    const taskText = document.getElementById("taskTextbox").value;
-    if (taskText === "") return;
+let savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+savedTasks.forEach(addItem);
 
-    const itemDiv = document.createElement("div");
-    itemDiv.classList.add("taskItem");
+console.log(savedTasks);
+
+
+function addItem(taskText){
+    const item = document.createElement("li");
+    item.classList.add("taskItem");
 
     let itemName = document.createElement("h4");
     itemName.innerText = taskText;
@@ -13,14 +16,24 @@ function addItem(){
     delButton.innerText = "X";
     delButton.classList.add("deleteButton")
     delButton.addEventListener("click", function(){
-        itemDiv.remove();
+        item.remove();
+        savedTasks.pop(taskText);
+        localStorage.setItem("tasks", JSON.stringify(savedTasks));
     });
 
-    itemDiv.append(itemName, delButton);
+    item.append(itemName, delButton);
 
-
-    document.getElementById("itemView").append(itemDiv);
-    document.getElementById("taskTextbox").value = "";
+    document.getElementById("itemView").append(item);
 }
 
-document.getElementById("addButton").onclick = addItem;
+document.getElementById("addButton").addEventListener("click", () => {
+    const taskText = document.getElementById("taskTextbox").value;
+    if (taskText === "") return;
+    addItem(taskText);
+    
+    savedTasks.push(taskText);
+    localStorage.setItem("tasks", JSON.stringify(savedTasks));
+
+    document.getElementById("taskTextbox").value = "";
+});
+

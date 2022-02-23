@@ -11,6 +11,10 @@ body{
     justify-content: center;
 }
 
+ul {
+    padding-left: 0;
+}
+
 .listHolder {
     border: 2px solid gray;
     background-color: white;
@@ -45,7 +49,7 @@ body{
     display: flex;
     border: 1px outset var(--button-border-color);
     background-color: var(--button-color);
-    margin: 7px 5px;
+    margin: 5px 5px;
     padding: 10px 10px;
 }
 
